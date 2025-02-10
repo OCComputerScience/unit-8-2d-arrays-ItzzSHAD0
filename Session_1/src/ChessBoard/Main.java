@@ -13,20 +13,14 @@ public class Main
         Piece[][] actualBoard = board.getBoard();
         print(actualBoard);
 
-        boolean canPlay = true;
-        while(canPlay)
-        {
-            Coordinate firstPiecePos = findPiece(actualBoard, input);
-            Coordinate secondPiecePos = findPiece(actualBoard, input);
+        Coordinate firstPiecePos = findPiece(actualBoard, input);
+        Coordinate secondPiecePos = findPiece(actualBoard, input);
 
-            Piece firstPiece = actualBoard[firstPiecePos.getX()][firstPiecePos.getY()];
-            Piece secondPiece = actualBoard[secondPiecePos.getX()][secondPiecePos.getY()];
+        Piece firstPiece = actualBoard[firstPiecePos.getX()][firstPiecePos.getY()];
+        Piece secondPiece = actualBoard[secondPiecePos.getX()][secondPiecePos.getY()];
 
-            firstPiece.swap(board, secondPiece);
-            print(actualBoard);
-
-            canPlay = false;
-        }
+        firstPiece.swap(board, secondPiece);
+        print(actualBoard);
     }
 
     private static Coordinate findPiece(Piece[][] actualBoard, Scanner input)

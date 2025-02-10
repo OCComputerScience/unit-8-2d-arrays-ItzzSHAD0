@@ -64,4 +64,9 @@ public class Chessboard
     {
         return board;
     }
+
+    public void setField(Piece piece, int xPos, int yPos)
+    {
+        board[yPos][xPos] = piece;
+    }
 }
