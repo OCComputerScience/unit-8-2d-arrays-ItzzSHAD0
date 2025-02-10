@@ -27,11 +27,19 @@ public class Piece
     {
         return yPos;
     }
+    public void setXPos(int xPos)
+    {
+        this.xPos = xPos;
+    }
+    public void setYPos(int yPos)
+    {
+        this.yPos = yPos;
+    }
     public int getTeam()
     {
         return team;
     }
-    public void swap(Chessboard board, Piece other)
+    public void swap(Chessboard boardInp, Piece other)
     {
         if (other.getTeam() == team)
         {
@@ -41,14 +49,14 @@ public class Piece
         {
             Piece tempOther = this;
 
-            xPos = other.xPos;
-            yPos = other.yPos;
+            boardInp.setField(other, this.getxPos(), this.getyPos());
+            boardInp.setField(tempOther, other.getxPos(), other.getyPos());
 
-            other.xPos = tempOther.xPos;
-            other.yPos = tempOther.yPos;
+            this.setXPos(other.getxPos());
+            this.setYPos(other.getyPos());
+            other.setXPos(tempOther.getxPos());
+            other.setYPos(tempOther.getyPos());
 
-            board.getBoard()[yPos][xPos] = other;
-            board.getBoard()[other.yPos][other.xPos] = this;
         }
         else
         {
