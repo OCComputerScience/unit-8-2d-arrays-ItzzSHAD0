@@ -10,7 +10,7 @@ public class Main
                            {3, 6, 9}};
 
         // Change the final element of the 1D array at index 0 to the total length of the 2D array
-        updateValue(myArray, 0, myArray[0].length - 1, myArray[0].length);
+        updateValue(myArray, 0, myArray[0].length - 1, myArray.length);
 
         // Add the value at the 1st and last index of the 2D array to the value of the last element in the 1D array at index 1
         updateValue(myArray, 1, myArray[1].length-1, myArray[0][0] + myArray[myArray.length - 1][myArray[myArray.length - 1].length - 1] + myArray[1][myArray[1].length-1]);
